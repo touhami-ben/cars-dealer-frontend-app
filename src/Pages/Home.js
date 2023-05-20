@@ -7,7 +7,7 @@ import { Button } from "react-bootstrap";
 export default function Home(){
     return <div className="Home">
         <Container>
-            <h1>Welcome to Cars Dealer App</h1>
+            <h1>Welcome to Atlantic Cars Dealer </h1>
             <p>This is a Cars list</p>
 
             <Link to = "/cars">

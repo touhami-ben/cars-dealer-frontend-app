@@ -5,7 +5,9 @@ import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
-import New from "./Pages/New"
+import New from "./Pages/New";
+import Edit from "./Pages/Edit";
+import FourOFour from "./Pages/FourOFour";
 
  
 
@@ -17,8 +19,10 @@ function App(){
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cars" element={<Index />} />
-          <Route path="cars/:id" element = {<Show />} />
-          <Route path="cars/new" element = {<New />} />
+          <Route path="/cars/:id" element = {<Show />} />
+          <Route path="/cars/new" element = {<New />} />
+          <Route path="/cars/:id/edit" element = {<Edit />} />
+          <Route patch="*" element = {<FourOFour />} />
         </Routes>
       </Router>
     </div>

@@ -12,7 +12,9 @@ export default function Car({car}){
                 </Card.Title>
 
                 <Card.Text>
-                    {Car.condition}
+                    {car.condition}
+                    <br></br>
+                    {car.price}$
                 </Card.Text>
                 <Link to ={`/cars/${car.id}`}>
                     <Button variant="dark">View Car</Button>

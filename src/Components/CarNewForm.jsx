@@ -2,7 +2,7 @@ import  React  from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -25,48 +25,53 @@ export default function CarNewForm (){
         .post(`${API}/cars`, newCar)
         .then(() => {navigate("/");
     }).catch ((error) => {
-        console.log("error", error);
-        navigate("/not-found")
+        console.warn("catch", error)
+        // console.log("error", error);
+        // navigate("/not-found")
     });
     }
 
     function handleTextChange(event) {
         setNewCar({...newCar, [event.target.id]: event.target.value })
     }
-    function handleCheckboxChange(event) {
-        setNewCar({...newCar, is_available: event.target.value})
+    function handleCheckboxChange() {
+        setNewCar({...newCar, is_available: !newCar.is_available})
     }
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">
-                        name of the car: 
-                    </label>
-                    <input 
+            <h2>New Car</h2>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3" controlId="name">
+                    <Form.Label>
+                        Model: 
+                    </Form.Label>
+                    <Form.Control 
                     id="name"
                     type="text"
+                    onChange={handleTextChange}
                     required
                     placeholder="Enter name of car"
                     value={newCar.name} />
                     
-                </div>
-                <label htmlFor="image_url">
-                    Url (image) Link of the car
-                </label>
-                <input 
-                id="image_url"
-                type="text"
-                onChange={{handleTextChange}}
-                placeholder="Enter url"
-                value={newCar.image_url} />
-                <div>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="image_url">
+                    <Form.Label>Image_URL</Form.Label>
+                    <Form.Control
+                        
+                        id="image_url"
+                        type="text"
+                        onChange={handleTextChange}
+                        placeholder="Enter url"
+                        value={newCar.image_url} />
 
-                    <label htmlFor="price">
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="">
+
+                    <Form.Label>
                         {" "}
                         Price
-                    </label>
-                    <input 
+                    </Form.Label>
+                    <Form.Control
                     id="price"
                     type="number"
                     onChange={handleTextChange}
@@ -75,20 +80,49 @@ export default function CarNewForm (){
                     title="price required"
                     required />
 
-                </div>
-                <div>
-                    <label htmlFor="is_available">
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Make</Form.Label>
+                    <Form.Control
+                        id="make"
+                        type="text"
+                        onChange={handleTextChange}
+                        value={newCar.make}
+                        placeholder="Enter make"
+                        />
+
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Condition</Form.Label>
+                    <Form.Control
+                        id="condition"
+                        type="text"
+                        onChange={handleTextChange}
+                        value={newCar.condition}
+                    />
+                </Form.Group>
+
+
+                <Form.Group className="mb-3" content="is_favorite">
+                    <Form.Label>
                         Available 
-                    </label>
-                    <input
+                    </Form.Label>
+                    <Form.Check
                     id="is_available"
                     type="checkbox"
                     onChange={handleCheckboxChange} />
+                </Form.Group>
 
+                <div>
+                    <div>
+                        <Button variant="primary" type="submit" onClick={() => navigate("/")}>Save</Button>
+                        <Button  variant="primary" type="button" onClick={()=> navigate("/")}>Cancel</Button>
+                        <Button  variant="primary" type="reset" >{" "} Reset</Button>
+                    </div>
                 </div>
-
-                <div></div>
-            </form>
+            </Form>
         </div>
     )
 }

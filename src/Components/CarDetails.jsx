@@ -41,12 +41,14 @@ export default function CarDetails(){
     return(
         <div>
 
-        <h2>Car {car.id} {car.is_available} ? "- ⭐️" : null </h2>
+        
 
         <Container>
             <p>Name: {car.name}</p>
             <p>Make: {car.make}</p>
             <p>condition: {car.condition}</p>
+            
+            
         </Container>
         <Container>
             {car.image_url ? <Image src ={car.image_url} fluid rounded /> : null}

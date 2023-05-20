@@ -29,7 +29,7 @@ function NavBar() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Link to="/entries/new">
+        <Link to="/cars/new">
           <Button variant="dark">New Car</Button>
         </Link>
       </Container>
