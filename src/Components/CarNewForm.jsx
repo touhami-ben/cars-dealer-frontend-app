@@ -25,9 +25,9 @@ export default function CarNewForm (){
         .post(`${API}/cars`, newCar)
         .then(() => {navigate("/");
     }).catch ((error) => {
-        console.warn("catch", error)
-        // console.log("error", error);
-        // navigate("/not-found")
+        // console.warn("catch", error)
+        console.log("error", error);
+        navigate("/not-found")
     });
     }
 
@@ -105,7 +105,7 @@ export default function CarNewForm (){
                 </Form.Group>
 
 
-                <Form.Group className="mb-3" content="is_favorite">
+                <Form.Group className="mb-3" controlId="is_favorite">
                     <Form.Label>
                         Available 
                     </Form.Label>
@@ -119,7 +119,10 @@ export default function CarNewForm (){
                     <div>
                         <Button variant="primary" type="submit" onClick={() => navigate("/")}>Save</Button>
                         <Button  variant="primary" type="button" onClick={()=> navigate("/")}>Cancel</Button>
-                        <Button  variant="primary" type="reset" >{" "} Reset</Button>
+                        <Button  variant="primary" type="reset" >
+                            {" "}
+                             Reset
+                        </Button>
                     </div>
                 </div>
             </Form>

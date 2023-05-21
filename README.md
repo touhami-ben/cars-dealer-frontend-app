@@ -1,3 +1,12 @@
+# Welcome to the Cars Dealer App
+Here is the link to the deployed front-end application and back-end API.
+
+## [Trello Board link](https://trello.com/b/Lu2WvVjf/portefolio-project)
+##  [Deployed Backend Url](https://cars-dealer-backend-app.onrender.com)
+## [Deployed Frontend url](https://luminous-dragon-aced2b.netlify.app/)
+## [backend repository](https://github.com/touhami-ben/cars-dealer-backend-app)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

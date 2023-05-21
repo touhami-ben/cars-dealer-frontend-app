@@ -14,7 +14,7 @@ export default function Car({car}){
                 <Card.Text>
                     {car.condition}
                     <br></br>
-                    {car.price}$
+                    {car.price}K $
                 </Card.Text>
                 <Link to ={`/cars/${car.id}`}>
                     <Button variant="dark">View Car</Button>

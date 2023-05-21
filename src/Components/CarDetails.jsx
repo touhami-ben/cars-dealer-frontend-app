@@ -40,14 +40,10 @@ export default function CarDetails(){
 
     return(
         <div>
-
-        
-
         <Container>
             <p>Name: {car.name}</p>
             <p>Make: {car.make}</p>
             <p>condition: {car.condition}</p>
-            
             
         </Container>
         <Container>

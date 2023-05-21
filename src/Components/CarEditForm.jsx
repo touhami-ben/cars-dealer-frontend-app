@@ -49,11 +49,12 @@ export default function CarEditForm (){
             navigate(`/cars/${id}`);
           })
           .catch((e) => console.warn("catch", e));
+          navigate("/not-found")
       };
 
      const handleSubmit=(event)=> {
         event.preventDefault();
-        updatedCar(editCar);
+        updatedCar(event);
 
         
      }
@@ -140,8 +141,11 @@ export default function CarEditForm (){
 
                 <div>
                     <Button variant="primary" type="submit" onSubmit={handleSubmit}>Save</Button>
-                    <Button  variant="primary" type ="button"  onClick={() => navigate("/")}>Cancel</Button>
-                    <Button  variant="primary" type ="reset" >{" "} Reset</Button>
+                    <Button  variant="primary" type ="button"  onClick={() => navigate("/cars")}>Cancel</Button>
+                    <Button  variant="primary" type ="reset" >
+                        {" "}
+                         Reset
+                    </Button>
 
                 </div>
             

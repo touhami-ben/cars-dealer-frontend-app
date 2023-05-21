@@ -8,6 +8,7 @@ import Show from "./Pages/Show";
 import New from "./Pages/New";
 import Edit from "./Pages/Edit";
 import FourOFour from "./Pages/FourOFour";
+import About from "./Pages/About"
 
  
 
@@ -23,6 +24,7 @@ function App(){
           <Route path="/cars/new" element = {<New />} />
           <Route path="/cars/:id/edit" element = {<Edit />} />
           <Route patch="*" element = {<FourOFour />} />
+          <Route path ="/about" element={<About />} />
         </Routes>
       </Router>
     </div>
