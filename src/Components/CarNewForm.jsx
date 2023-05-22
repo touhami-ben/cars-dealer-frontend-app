@@ -25,7 +25,6 @@ export default function CarNewForm (){
         .post(`${API}/cars`, newCar)
         .then(() => {navigate("/");
     }).catch ((error) => {
-        // console.warn("catch", error)
         console.log("error", error);
         navigate("/not-found")
     });
