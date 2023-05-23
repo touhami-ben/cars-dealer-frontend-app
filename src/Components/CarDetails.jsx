@@ -44,6 +44,7 @@ export default function CarDetails(){
             <p>Name: {car.name}</p>
             <p>Make: {car.make}</p>
             <p>condition: {car.condition}</p>
+            <p>Availability: {car.is_available ? "this car is available " : "Sold out"}</p>
             
         </Container>
         <Container>

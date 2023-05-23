@@ -116,7 +116,7 @@ export default function CarNewForm (){
 
                 <div>
                     <div>
-                        <Button variant="primary" type="submit" onClick={() => navigate("/")}>Save</Button>
+                        <Button variant="primary" type="submit" onClick={() => navigate("/cars")}>Save</Button>
                         <Button  variant="primary" type="button" onClick={()=> navigate("/")}>Cancel</Button>
                         <Button  variant="primary" type="reset" >
                             {" "}
